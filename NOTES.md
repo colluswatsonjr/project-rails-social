@@ -84,19 +84,21 @@ Minimum of create and read actions for EACH resource.
 
 
     - Create:
-        - post
-        - comment
+        - user (sign in)
+        - post (create post)
+        - comment (comment on post)
     - Read: 
-        - user
-        - posts
-        - comments
+        - user  (look at personal/friends page)
+        - posts (read personal/friends post)
+        - comments (read personal/friends comments)
     - Update:
-        - user
-        - post
-        - comment
+        - user (edit user info)
+        - post (edit post)
+        - comment (edit comment)
     - Delete: 
-        - post
-        - comment
+        - user (delete account)
+        - post (delte post along with comments)
+        - comment (delete comment)
 
 Have at least three different client-side routes using React Router. Be sure to include a nav bar or other UI element that allows users to navigate between routes.
 
