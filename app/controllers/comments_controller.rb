@@ -15,6 +15,23 @@ class CommentsController < ApplicationController
             render json: { errors: comment.errors.full_messages }, status: :unprocessable_entity
         end
     end
+    def update
+        comment = Comment.find_by(id: params[:id])
+        if comment
+            comment.update(comment_params)
+            render json: comment
+        else
+            render json: {error: "Not Found"}, status: :not_found
+        end
+    end
+    def destroy
+        comment = Comment.find_by(id:params[:id])
+        if comment
+            comment.destroy
+        else
+            render json: {error: "Not Found"}, status: :not_found
+        end
+    end
 
     private
 

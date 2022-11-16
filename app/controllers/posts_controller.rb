@@ -17,6 +17,23 @@ class PostsController < ApplicationController
             render json: { errors: post.errors.full_messages }, status: :unprocessable_entity
         end
     end
+    def update
+        post = Post.find_by(id: params[:id])
+        if post
+            post.update(post_params)
+            render json: post
+        else
+            render json: {error: "Not Found"}, status: :not_found
+        end
+    end
+    def destroy
+        post = Post.find_by(id:params[:id])
+        if post
+            post.destroy
+        else
+            render json: {error: "Not Found"}, status: :not_found
+        end
+    end
 
     private 
 

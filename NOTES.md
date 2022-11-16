@@ -87,11 +87,11 @@ Minimum of create and read actions for EACH resource.
         - post
         - comment
     - Read: 
-        - users
+        - user
         - posts
         - comments
     - Update:
-        - user info
+        - user
         - post
         - comment
     - Delete: 
